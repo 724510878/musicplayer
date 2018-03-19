@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfKuGou_Beta.Window_Skin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:local="clr-namespace:WpfKuGou_Beta" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+        xmlns:controls="clr-namespace:WpfKuGou_Beta.Controls"
+        Title="皮肤与窗口调整" Height="270" Width="630" ResizeMode="NoResize"   WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" MouseLeftButtonDown="OnHitTest" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="5,5,5,5" Name="back">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid >
+            <TextBlock Text="我的皮肤" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Width="50" Foreground="Blue" FontWeight="Bold"/>
+            <controls:ImageButton x:Name="MaxBtn" Height="23" Width="23" Margin="580,0,0,0" Style="{DynamicResource ImageButtonStyle}" NorImage="skin/close_normal.png" HorImage="skin/close_hot.png" DownImage="skin/close_down.png" ToolTip="关闭" Click="Btn_Click"/>
+        </Grid>
+       
+        <WrapPanel Name="skins" Margin="20,5,20,0" Grid.Row="1" >
+           
+        </WrapPanel>
+            
+        
+    </Grid>
+    </Border>
+</Window>

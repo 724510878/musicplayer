@@ -1,0 +1,94 @@
+/*
+* Copyright 2014, kugou.com
+* Creator: Green
+* $Author: linweijian $
+* $Date: 2014-12-08 $
+*/
+/* reset
+--------------------------------------------*/
+html{ -webkit-text-size-adjust:none;}
+body{font:12px/1.5 Arial, simsun,sans-serif;}
+input{ font-family:Arial, simsun,sans-serif;;}
+body,table,tr,td,ul,li,div,span,h1,h2,h3,h4,h5,h6,p,pre,form,fieldset,input,ol,dl,dd,dt,th,thead,tbody,tfoot,blockquote,iframe{margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6,p,a{font-size:100%;}
+ul,ol,li{list-style:none;}
+table{border-collapse:collapse; border-style:none;}
+
+a img{border:0;}
+a{ text-decoration:none;}
+input,select,img{vertical-align:middle;}
+.clear{clear:both;height:0;visibility:hidden;width:0;overflow:hidden;}
+.clearfix:after { display:block; content:".";clear:both;height:0;visibility:hidden;width:0;overflow:hidden; }
+.clearfix {zoom:1; }
+
+a{ text-decoration:none;color:#474747;cursor:pointer;}
+a:hover{}
+body{color:#474747;}
+
+textarea{resize: vertical;}
+input::-ms-clear{display: none;}
+input::-ms-reveal{display: none;}
+/* skin
+---------------------------------------------*/
+body,html{background: #fff;}
+.lgn_icon_user,
+.lgn_icon_pwd,
+.lgn_chk,
+.lgn_btn,
+.lgn_foot dl dd a,
+.lgn_list li a
+{background: url(../images/pc_login.png) no-repeat;}
+/* page
+--------------------------------------------*/
+.lgn_wrap{width: 305px;margin: 0 auto;position: relative;}
+.lgn_title{font-size: 18px;font-weight: normal; color: #333;line-height: 55px;height: 55px;font-family:Microsoft YaHei, Arial, Helvetica, sans-serif;}
+.lgn_login{width: 100%;margin: 0 auto 0;}
+.lgn_foot{height: 21px;line-height: 21px;overflow: hidden;position: absolute;right: 0;top: 18px;width: 124px;}
+
+.lgn_ipt{width: 303px;height: 30px;margin-bottom: 10px;border: 1px solid #c8c8c8;position: relative;overflow: hidden;}
+.lgn_ipt input{border: 0 none;height: 16px;padding: 7px 0;width:245px; margin-left:28px;outline: 0;zoom: 1;overflow: hidden;}
+
+.lgn_ipt_focus{border-color:#589de7; }
+
+.lgn_msg{height: 24px;line-height: 24px;position: relative;margin: 9px 0 0 0;text-align: center;visibility: hidden;color:#ef0314; }
+.lgn_msg i{width: 0;height: 0;font-size: 0;border: 4px dashed transparent;border-top:4px solid #d8bf19;top:18px; left: 100px;position: absolute;}
+
+.lgn_tips{position: absolute;color: #bbb;left: 28px;top: 7px;cursor:text;}
+
+.lgn_list{width: 303px;position: absolute;background:#fff;border: 1px solid #484848;z-index: 1;top: 86px;display: none;overflow: hidden;filter:Alpha(Opacity=92); Opacity:0.92;}
+.lgn_list li{width: 100%;position: relative;color:#000;height: 16px;line-height: 16px;cursor: default;float: right;overflow: hidden;}
+.lgn_list li span{float: left;padding-left: 4px;}
+.lgn_list li a{width: 9px;height: 8px;float: right;margin: 4px 4px 0 0;background-position: -80px -160px;cursor: pointer;visibility: hidden;}
+.lgn_list li.current{background: #628cba;color: #fff;}
+.lgn_list li.current a{visibility: visible;}
+.lgn_list li.current a:hover{background-position: -100px -160px;}
+
+.lgn_list_scroll{overflow: auto;height: 144px;scrollbar-arrow-color:#999;scrollbar-face-color:#eee;scrollbar-darkshadow-color:#ffffff;scrollbar-highlight-color:#ffffff;scrollbar-3dlight-color:#ffffff;scrollbar-shadow-color:#ffffff;scrollbar-track-color:#ffffff;}
+.lgn_list_scroll li{width: 286px;}
+
+.lgn_link,.lgn_link a{color: #589de7;text-align: right;}
+
+.lgn_icon_user,.lgn_icon_pwd{width: 14px;height: 14px;display: block;position: absolute;top: 8px;left: 6px;}
+.lgn_icon_user{background-position: 0 -160px;}
+.lgn_icon_pwd{background-position: -20px -160px;}
+
+.lgn_arrow{position: absolute;right: 0;top: 0;height: 10px;width: 10px;padding:10px;cursor: pointer;}
+.lgn_arrow i{width: 0;height: 0;font-size: 0;border: 5px solid #fff;border-top-color: #7f7f7f;position: relative;top: 4px;float: right;}
+
+.lgn_chk{ display:inline-block; vertical-align:middle; padding-left:15px; width:0; height:15px; overflow:hidden; background-position:-40px -160px; cursor: pointer;}
+.lgn_chk_checked{ background-position:-60px -160px;}
+
+.lgn_chk_txt{cursor: pointer;position: relative;*top: -1px;_top:2px;*left: 4px;}
+
+.lgn_btn{width: 185px;height: 35px;display: block;margin:  0 auto 0;overflow: hidden;text-indent: -10em;}
+.lgn_btn:hover{background-position: 0 -40px;}
+.lgn_btn:active{background-position: 0 -80px;}
+
+.lgn_foot dl{display: block;height: 21px;overflow: hidden;}
+.lgn_foot dl dt{margin-right: 15px;float: left;}
+.lgn_foot dl dd{float: left;}
+.lgn_foot dl dd a{display: block;width: 21px;height: 21px;margin: 0 0 0 10px;}
+.lgn_foot dl dd a.lgn_icon_qq{background-position: 0 -120px;}
+.lgn_foot dl dd a.lgn_icon_sina{background-position: -40px -120px;}
+.lgn_foot dl dd a.lgn_icon_rr{background-position: -80px -120px;}
+.lgn_foot dl dd a.lgn_icon_wx{background-position: -120px -120px;}

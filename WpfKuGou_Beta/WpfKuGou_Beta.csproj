@@ -1,0 +1,866 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FB1995F-6258-469B-8C31-30296FAF3B02}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfKuGou_Beta</RootNamespace>
+    <AssemblyName>KuKuPlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>kukou.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="GetLyricAndLyricTime.cs" />
+    <Compile Include="LycSearch.cs" />
+    <Compile Include="LyricShow.cs" />
+    <Compile Include="Mode\BackImage.cs" />
+    <Compile Include="Mode\Song.cs" />
+    <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
+      <DependentUpon>SampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMode\MusicViewMode.cs" />
+    <Compile Include="ViewMode\Skins.cs" />
+    <Compile Include="Window_Skin.xaml.cs">
+      <DependentUpon>Window_Skin.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageButton.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\SampleDataSource\SampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window_Skin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="BackGround\back.jpg" />
+    <Resource Include="music_ie_player.ico" />
+    <Content Include="skin\00120[34x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00121[34x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00122[34x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00123[34x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00124[34x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00125[34x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00126[34x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00127[34x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00165[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00166[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00167[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00259[29x29x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00386[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00387[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00388[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00567[26x28x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00568[26x28x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00711[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00712[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00713[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00714[60x39x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00977[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00978[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\00979[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01010[13x13x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01011[13x13x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01012[13x13x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01066[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01067[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01081[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01082[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01083[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01209[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01210[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01211[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01212[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01213[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01214[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01215[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01216[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01217[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01226[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01227[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01228[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01229[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01230[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01231[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01276[27x27x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01412[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01413[46x62x4BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01414[46x62x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01587[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01588[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01716[48x441x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01748[23x23x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01777[23x23x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01778[23x23x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01779[23x23x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01780[23x23x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01845[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01846[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01847[80x50x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01875[62x30x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01911[23x23x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01928[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01932[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01944[26x22x2BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01945[26x22x2BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01946[26x22x2BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01947[26x22x2BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\02209[200x36x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\close_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\close_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\close_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\download_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\download_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\download_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\love_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\love_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\love_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\Lyric_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\Lyric_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\Lyric_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\menu_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\menu_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\menu_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\min_down.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\min_hot.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\min_normal.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="skin\musicplayer.png" />
+    <Content Include="skin\next_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\next_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\next_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\pause_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\pause_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\pause_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\play_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\play_game_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\play_game_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\play_game_hot1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\play_game_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\play_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\play_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\pre_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\pre_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\pre_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\Search_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\Search_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\Search_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\share_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\share_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\share_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\skin_down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\skin_hot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\skin_normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\SliderBackVolume.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\SliderForeVolume.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BackGround\Thumbnail.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="kukou.ico" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
+    <Resource Include="skin\00120[34x50x8BPP].png">
+      <Link>skin\00120[34x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00121[34x50x8BPP].png">
+      <Link>skin\00121[34x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00122[34x50x8BPP].png">
+      <Link>skin\00122[34x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00123[34x50x8BPP].png">
+      <Link>skin\00123[34x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00124[34x50x8BPP].png">
+      <Link>skin\00124[34x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00125[34x50x8BPP].png">
+      <Link>skin\00125[34x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00126[34x50x8BPP].png">
+      <Link>skin\00126[34x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00127[34x50x8BPP].png">
+      <Link>skin\00127[34x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00165[80x50x8BPP].png">
+      <Link>skin\00165[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00166[80x50x8BPP].png">
+      <Link>skin\00166[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00167[80x50x8BPP].png">
+      <Link>skin\00167[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00259[29x29x8BPP].png">
+      <Link>skin\00259[29x29x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00386[80x50x8BPP].png">
+      <Link>skin\00386[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00387[80x50x8BPP].png">
+      <Link>skin\00387[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00388[80x50x8BPP].png">
+      <Link>skin\00388[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00567[26x28x8BPP].png">
+      <Link>skin\00567[26x28x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00568[26x28x8BPP].png">
+      <Link>skin\00568[26x28x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00711[80x50x8BPP].png">
+      <Link>skin\00711[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00712[80x50x8BPP].png">
+      <Link>skin\00712[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00713[80x50x8BPP].png">
+      <Link>skin\00713[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00714[60x39x8BPP].png">
+      <Link>skin\00714[60x39x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00977[80x50x8BPP].png">
+      <Link>skin\00977[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00978[80x50x8BPP].png">
+      <Link>skin\00978[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\00979[80x50x8BPP].png">
+      <Link>skin\00979[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01010[13x13x8BPP].png">
+      <Link>skin\01010[13x13x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01011[13x13x8BPP].png">
+      <Link>skin\01011[13x13x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01012[13x13x8BPP].png">
+      <Link>skin\01012[13x13x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01066[26x22x8BPP].png">
+      <Link>skin\01066[26x22x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01067[26x22x8BPP].png">
+      <Link>skin\01067[26x22x8BPP].png</Link>
+    </Resource>
+    <Content Include="skin\01068[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="skin\01081[80x50x8BPP].png">
+      <Link>skin\01081[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01082[80x50x8BPP].png">
+      <Link>skin\01082[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01083[80x50x8BPP].png">
+      <Link>skin\01083[80x50x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01209[46x62x8BPP].png">
+      <Link>skin\01209[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01210[46x62x8BPP].png">
+      <Link>skin\01210[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01211[46x62x8BPP].png">
+      <Link>skin\01211[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01212[46x62x8BPP].png">
+      <Link>skin\01212[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01213[46x62x8BPP].png">
+      <Link>skin\01213[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01214[46x62x8BPP].png">
+      <Link>skin\01214[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01215[46x62x8BPP].png">
+      <Link>skin\01215[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01216[46x62x8BPP].png">
+      <Link>skin\01216[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01217[46x62x8BPP].png">
+      <Link>skin\01217[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01226[46x62x8BPP].png">
+      <Link>skin\01226[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01227[46x62x8BPP].png">
+      <Link>skin\01227[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01228[46x62x8BPP].png">
+      <Link>skin\01228[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01229[46x62x8BPP].png">
+      <Link>skin\01229[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01230[46x62x8BPP].png">
+      <Link>skin\01230[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01231[46x62x8BPP].png">
+      <Link>skin\01231[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01276[27x27x8BPP].png">
+      <Link>skin\01276[27x27x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01412[46x62x8BPP].png">
+      <Link>skin\01412[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01413[46x62x4BPP].png">
+      <Link>skin\01413[46x62x4BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01414[46x62x8BPP].png">
+      <Link>skin\01414[46x62x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01587[26x22x8BPP].png">
+      <Link>skin\01587[26x22x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01588[26x22x8BPP].png">
+      <Link>skin\01588[26x22x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01716[48x441x8BPP].png">
+      <Link>skin\01716[48x441x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01748[23x23x8BPP].png">
+      <Link>skin\01748[23x23x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01777[23x23x8BPP].png">
+      <Link>skin\01777[23x23x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01778[23x23x8BPP].png">
+      <Link>skin\01778[23x23x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01779[23x23x8BPP].png">
+      <Link>skin\01779[23x23x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01780[23x23x8BPP].png">
+      <Link>skin\01780[23x23x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01875[62x30x8BPP].png">
+      <Link>skin\01875[62x30x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01911[23x23x8BPP].png">
+      <Link>skin\01911[23x23x8BPP].png</Link>
+    </Resource>
+    <Content Include="skin\01926[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="skin\01927[26x22x8BPP].png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="skin\01928[26x22x8BPP].png">
+      <Link>skin\01928[26x22x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01944[26x22x2BPP].png">
+      <Link>skin\01944[26x22x2BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01945[26x22x2BPP].png">
+      <Link>skin\01945[26x22x2BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01946[26x22x2BPP].png">
+      <Link>skin\01946[26x22x2BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\01947[26x22x2BPP].png">
+      <Link>skin\01947[26x22x2BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\02209[200x36x8BPP].png">
+      <Link>skin\02209[200x36x8BPP].png</Link>
+    </Resource>
+    <Resource Include="skin\close_down.png">
+      <Link>skin\close_down.png</Link>
+    </Resource>
+    <Resource Include="skin\close_hot.png">
+      <Link>skin\close_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\close_normal.png">
+      <Link>skin\close_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\down.png">
+      <Link>skin\down.png</Link>
+    </Resource>
+    <Resource Include="skin\download_down.png">
+      <Link>skin\download_down.png</Link>
+    </Resource>
+    <Resource Include="skin\download_hot.png">
+      <Link>skin\download_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\download_normal.png">
+      <Link>skin\download_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\left.png">
+      <Link>skin\left.png</Link>
+    </Resource>
+    <Resource Include="skin\love_down.png">
+      <Link>skin\love_down.png</Link>
+    </Resource>
+    <Resource Include="skin\love_hot.png">
+      <Link>skin\love_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\love_normal.png">
+      <Link>skin\love_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\Lyric_down.png">
+      <Link>skin\Lyric_down.png</Link>
+    </Resource>
+    <Resource Include="skin\Lyric_hot.png">
+      <Link>skin\Lyric_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\Lyric_normal.png">
+      <Link>skin\Lyric_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\menu_down.png">
+      <Link>skin\menu_down.png</Link>
+    </Resource>
+    <Resource Include="skin\menu_hot.png">
+      <Link>skin\menu_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\menu_normal.png">
+      <Link>skin\menu_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\min_down.bmp">
+      <Link>skin\min_down.bmp</Link>
+    </Resource>
+    <Resource Include="skin\min_hot.bmp">
+      <Link>skin\min_hot.bmp</Link>
+    </Resource>
+    <Resource Include="skin\min_normal.bmp">
+      <Link>skin\min_normal.bmp</Link>
+    </Resource>
+    <Resource Include="skin\next_down.png">
+      <Link>skin\next_down.png</Link>
+    </Resource>
+    <Resource Include="skin\next_hot.png">
+      <Link>skin\next_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\next_normal.png">
+      <Link>skin\next_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\pause_down.png">
+      <Link>skin\pause_down.png</Link>
+    </Resource>
+    <Resource Include="skin\pause_hot.png">
+      <Link>skin\pause_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\pause_normal.png">
+      <Link>skin\pause_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\play_down.png">
+      <Link>skin\play_down.png</Link>
+    </Resource>
+    <Resource Include="skin\play_game_down.png">
+      <Link>skin\play_game_down.png</Link>
+    </Resource>
+    <Resource Include="skin\play_game_hot.png">
+      <Link>skin\play_game_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\play_game_hot1.png">
+      <Link>skin\play_game_hot1.png</Link>
+    </Resource>
+    <Resource Include="skin\play_game_normal.png">
+      <Link>skin\play_game_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\play_hot.png">
+      <Link>skin\play_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\play_normal.png">
+      <Link>skin\play_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\pre_down.png">
+      <Link>skin\pre_down.png</Link>
+    </Resource>
+    <Resource Include="skin\pre_hot.png">
+      <Link>skin\pre_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\pre_normal.png">
+      <Link>skin\pre_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\Search_down.png">
+      <Link>skin\Search_down.png</Link>
+    </Resource>
+    <Resource Include="skin\Search_hot.png">
+      <Link>skin\Search_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\Search_normal.png">
+      <Link>skin\Search_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\share_down.png">
+      <Link>skin\share_down.png</Link>
+    </Resource>
+    <Resource Include="skin\share_hot.png">
+      <Link>skin\share_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\share_normal.png">
+      <Link>skin\share_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\skin_down.png">
+      <Link>skin\skin_down.png</Link>
+    </Resource>
+    <Resource Include="skin\skin_hot.png">
+      <Link>skin\skin_hot.png</Link>
+    </Resource>
+    <Resource Include="skin\skin_normal.png">
+      <Link>skin\skin_normal.png</Link>
+    </Resource>
+    <Resource Include="skin\SliderBackVolume.png">
+      <Link>skin\SliderBackVolume.png</Link>
+    </Resource>
+    <Resource Include="skin\SliderForeVolume.png">
+      <Link>skin\SliderForeVolume.png</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

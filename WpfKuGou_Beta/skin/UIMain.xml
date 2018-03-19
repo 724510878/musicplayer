@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1000,643" caption="0,0,0,35">
+    <VerticalLayout name="bkwnd" width="1000" height="643" bkimage="Background\default\back.png">
+        <HorizontalLayout height="35">
+        		<HorizontalLayout width="360">
+	            <Label name="LabelTitle" text="酷狗音乐-O(∩_∩)O-sky" float="true" pos="10,0,0,0" width="160" height="29" textcolor="#FFFFFFFF" disabledtextcolor="#FFA7A6AA" />
+	            <Button name="BtnLoad" float="true" pos="265,12,0,0" width="26" height="22" normalimage="download_normal.png" hotimage="download_hot.png" pushedimage="download_normal.png" tooltip="下载"/>
+	            <Button name="BtnLove" float="true" pos="295,12,0,0" width="26" height="22" normalimage="love_normal.png" hotimage="love_hot.png" pushedimage="love_down.png" tooltip="我喜欢"/>
+	            <Button name="BtnShare" float="true" pos="330,12,0,0" width="26" height="22" normalimage="share_normal.png" hotimage="share_hot.png" pushedimage="share_down.png" tooltip="分享"/>
+        	 </HorizontalLayout >
+        	 <HorizontalLayout  bkimage="file='00714[60x39x8BPP].png' corner='24,0,0,0'" >
+        	 		<Button name="Login" float="true" pos="30,10,0,0" width="25" height="18" text="登录" textcolor="#FFFFFFFF"/>
+        	 		<Control float="true" pos="59,12,0,0" width="1" height="13"  bkcolor="#FFFFFFFF"/>
+        	 		<Button name="register" float="true" pos="65,10,0,0" width="25" height="18" text="注册" textcolor="#FFFFFFFF"/>
+        	 		<Button name="version" float="true" pos="95,2,0,0" width="30" height="30" bkimage="00259[29x29x8BPP].png" />
+        	 		<Edit name="Editsearch" float="true" pos="145,4,0,0" width="230" height="27" watermarktext="心如刀割 陈洁仪" watermarkcolor="#FF646464" bkcolor="FF96BEEC" nativebkcolor="FF96BEEC" textpadding="4,3,33,3"/>
+         	 		<Button name="btnSearch" float="true" pos="340,4,0,0" width="33" height="27" normalimage="Search_normal.png" hotimage="Search_hot.png" pushedimage="Search_normal.png"/>
+         	 		<Button name="game" float="true" pos="385,8,0,0" width="52" height="18" normalimage="play_game_normal.png" hotimage="play_game_hot.png" pushedimage="play_game_down.png" tooltip="酷狗网络游戏平台"/>
+         	 		<Button name="Money" float="true" pos="445,0,0,0" width="26" height="28" normalimage="00567[26x28x8BPP].png" hotimage="00568[26x28x8BPP].png" tooltip="抢福袋，马上有奖"/>
+         	 	  <Button name="Changeskin" float="true" pos="480,8,0,0" width="23" height="18" normalimage="skin_normal.png" hotimage="skin_hot.png" pushedimage="skin_down.png" tooltip="更换皮肤"/>
+         	 		<Button name="MainMenu" float="true" pos="520,8,0,0" width="20" height="20" normalimage="menu_normal.png" hotimage="menu_hot.png" pushedimage="menu_down.png" tooltip="主菜单"/>
+         	 		<Button name="BtnMin" float="true" pos="580,4,0,0" width="21" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="min_normal.bmp" hotimage="min_hot.bmp" pushedimage="min_down.bmp" />
+	            <Button name="BtnClose" float="true" pos="605,4,0,0" width="23" height="23" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="close_normal.png" hotimage="close_hot.png" pushedimage="close_down.png" />
+        	 </HorizontalLayout>
+        </HorizontalLayout>
+        <HorizontalLayout height="75">
+            <HorizontalLayout  width="360" >
+                    <Text name="SongName" float="true" pos="1,0,0,0" width="284" height="27" textpadding="2,0,2,0" textcolor="#00FFFFFF" align="wrap" />
+                    <Slider name="SliderSong" float="true" pos="16,0,0,0" width="325" height="20" thumbsize="13,13" bkimage="file='SliderBackVolume.png' corner='20,0,20,5' fade='180' " foreimage="SliderForeVolume.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" min="0" max="100" value="0" hor="true" thumbimage="01010[13x13x8BPP].png" thumbhotimage="01011[13x13x8BPP].png" thumbpushedimage="01012[13x13x8BPP].png"/>
+                    <Text name="HasPlayTime" text="00::00" float="true" pos="15,15,0,0" width="60" height="15" textpadding="2,0,2,0" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" align="wrap" />
+                    <Text name="TotalTime" text="00:00" float="true" pos="315,15,0,0" width="60" height="15" textpadding="2,0,2,0" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" align="centerwrap" />
+                    <Button name="BtnLyric" float="true" pos="14,35,0,0" width="29" height="26" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="Lyric_normal.png" hotimage="Lyric_hot.png" pushedimage="Lyric_down.png" />
+                    <Button name="BtnPre" float="true" pos="110,25,0,0" width="49" height="49" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="pre_normal.png" hotimage="pre_hot.png" pushedimage="pre_down.png" />
+                    <Button name="BtnPlay" float="true" pos="169,25,0,0" width="49" height="49" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="play_normal.png" hotimage="play_hot.png" pushedimage="play_down.png" />
+                    <Button name="BtnNext" float="true" pos="228,25,0,0" width="49" height="49" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="next_normal.png" hotimage="next_hot.png" pushedimage="next_down.png" />
+                    <Button name="BtnPause" visible="false" float="true" pos="169,25,0,0" width="49" height="49" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="pause_normal.png" hotimage="pause_hot.png" pushedimage="pause_down.png" />
+            </HorizontalLayout>
+            <HorizontalLayout>
+            				<Button float="true" pos= "35,30,0,0" width="34" height="50" normalimage="00123[34x50x8BPP].png" hotimage="00120[34x50x8BPP].png" pushedimage="00122[34x50x8BPP].png" tooltip="返回"/>
+            				<Button float="true" pos= "86,30,0,0" width="34" height="50" normalimage="00127[34x50x8BPP].png" hotimage="00125[34x50x8BPP].png" pushedimage="00126[34x50x8BPP].png" tooltip="刷新"/>
+            				<Option name="yueku" float="true" pos="150,30,0,0" width="80" height="50" normalimage="00977[80x50x8BPP].png" hotimage="00978[80x50x8BPP].png" selectedimage="00979[80x50x8BPP].png" group="Styles" selected="true" tooltip="最新最火歌曲尽在其中" />
+            				<Option name="fm" float="true" pos="250,30,0,0" width="80" height="50" normalimage="01081[80x50x8BPP].png" hotimage="01082[80x50x8BPP].png" selectedimage="01083[80x50x8BPP].png" group="Styles" tooltip="享受随便听听的精彩"/>
+            				<Option name="mv" float="true" pos="350,30,0,0" width="80" height="50" normalimage="00711[80x50x8BPP].png" hotimage="00712[80x50x8BPP].png" selectedimage="00713[80x50x8BPP].png" group="Styles" tooltip="随意点播百万高清MV"/>
+            				<Option name="show" float="true" pos="450,30,0,0" width="80" height="50" normalimage="00386[80x50x8BPP].png" hotimage="00387[80x50x8BPP].png" selectedimage="00388[80x50x8BPP].png" group="Styles" tooltip="在线直播"/>
+            				<Option name="fanxing" float="true" pos="550,30,0,0" width="80" height="50" normalimage="00165[80x50x8BPP].png" hotimage="00166[80x50x8BPP].png" selectedimage="00167[80x50x8BPP].png" group="Styles" tooltip="精准歌词搭配高清写真"/>
+            </HorizontalLayout>
+        </HorizontalLayout>
+        <HorizontalLayout>
+        		<VerticalLayout width="46" bkimage="01716[48x441x8BPP].png" >
+        				<Option name="LocalMusic" width="44" height="62" normalimage="01226[46x62x8BPP].png" hotimage="01227[46x62x8BPP].png" selectedimage="01228[46x62x8BPP].png" group="Music" selected="true" tooltip="本地列表"/>
+        				<Option name="NetCollect" width="44" height="62" normalimage="01209[46x62x8BPP].png" hotimage="01210[46x62x8BPP].png" selectedimage="01211[46x62x8BPP].png" group="Music" tooltip="网络收藏"/>
+        				<Option name="tvMusic" width="44" height="62" normalimage="01229[46x62x8BPP].png" hotimage="01230[46x62x8BPP].png" selectedimage="01231[46x62x8BPP].png" group="Music" tooltip="音乐电台"/>
+        				<Option name="TmpPlay" width="44" height="62" normalimage="01215[46x62x8BPP].png" hotimage="01216[46x62x8BPP].png" selectedimage="01217[46x62x8BPP].png" group="Music" tooltip="临时播"/>
+        				<Option name="Myload" width="44" height="62" normalimage="01212[46x62x8BPP].png" hotimage="01213[46x62x8BPP].png" selectedimage="01214[46x62x8BPP].png" group="Music" tooltip="我的下载"/>
+        				<Option name="More" width="44" height="62" normalimage="01412[46x62x8BPP].png" hotimage="01413[46x62x4BPP].png" selectedimage="01414[46x62x8BPP].png" group="Music" tooltip="更多"/>
+        				<control />
+        		</VerticalLayout>
+            <HorizontalLayout>
+		             <List name="SongList" bkcolor="#50FFFFFF" padding="0,0,0,1" width="292" itemselectedtextcolor="#FF000000" itemhottextcolor="#FF000000" itemhotbkcolor="#A0778899" itemselectedbkcolor="#C0778899" itemdisabledbkcolor="#00FFFFFF" header="hidden" vscrollbar="true">
+		                  <ListHeader />
+		                  <ListContainerElement height="30" mouse="false">
+		                  	<HorizontalLayout>
+		                  		<Label text="默认列表" padding="5,5,0,0" align="top"/>
+		                  		<Button name="add" width="23" height="23" padding="0,2,10,0" normalimage="01911[23x23x8BPP].png" tooltip="添加歌曲"/>
+		                  	</HorizontalLayout>
+		                  </ListContainerElement>
+		             </List>
+		        		<VerticalLayout name="AddInfoLayout" padding="0,0,1,1">
+	                <HorizontalLayout name="SongLayout" >
+	                    <ActiveX name="iewnd"  menu="false" clsid="{8856F961-340A-11D0-A96B-00C04FD705A2}" delaycreate="false" />
+	                </HorizontalLayout>
+            		</VerticalLayout>
+            </HorizontalLayout>
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>

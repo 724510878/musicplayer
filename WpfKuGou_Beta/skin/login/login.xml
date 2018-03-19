@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="395,283" caption="0,0,0,28" roundcorner="5,5">
+    <VerticalLayout name="bk" width="648" height="413" bkimage="Background\default\back.png">
+       	<HorizontalLayout height="28">
+       		 <Label  text="登陆账号" textcolor="#FFFFFFFF" padding="5,5,0,0"/>
+       		 <Button name="close" width="23" height="23" padding="5,5,5,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="close_normal.png" hotimage="close_hot.png" pushedimage="close_down.png" />
+       	</HorizontalLayout >	 
+        <ActiveX name="iewnd"  menu="false" clsid="{8856F961-340A-11D0-A96B-00C04FD705A2}" delaycreate="false" />
+    </VerticalLayout>
+</Window>

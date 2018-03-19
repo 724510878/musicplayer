@@ -1,0 +1,112 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:WpfKuGou_Beta="clr-namespace:WpfKuGou_Beta"
+    xmlns:controls="clr-namespace:WpfKuGou_Beta.Controls"
+    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions">
+	<!-- 应该在此定义资源字典条目。-->
+	<Style x:Key="ImageRadioButtonStyle" TargetType="{x:Type controls:ImageRadioButton}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls:ImageRadioButton}">
+					<Grid>
+						<Image HorizontalAlignment="Left" x:Name="Nor" VerticalAlignment="Top" Source="{TemplateBinding NorImage}" 
+                               Stretch="Fill"/>
+						<Image HorizontalAlignment="Left" x:Name="Hor" VerticalAlignment="Top" Source="{TemplateBinding HorImage}"
+                               Opacity="0" Stretch="Fill"/>
+						<Image HorizontalAlignment="Left" x:Name="Selected" VerticalAlignment="Top" Source="{TemplateBinding SelectedImage}" 
+                               Opacity="0" Stretch="Fill"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter TargetName="Nor" Property="Opacity" Value="0" />
+								<Setter TargetName="Hor" Property="Opacity" Value="100" />
+								<Setter TargetName="Selected" Property="Opacity" Value="0" />
+							</Trigger>
+							<Trigger Property="IsChecked" Value="True">
+								<Setter TargetName="Nor" Property="Opacity" Value="0" />
+								<Setter TargetName="Hor" Property="Opacity" Value="0" />
+								<Setter TargetName="Selected" Property="Opacity" Value="100" />
+							</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ListBoxItemMusicStyle" TargetType="{x:Type ListBoxItem}">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+		<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ListBoxItem}">
+					<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"  SnapsToDevicePixels="true"  Width="280" Height="36">
+						<Grid x:Name="grid" HorizontalAlignment="Stretch" >
+                            <TextBlock HorizontalAlignment="Left" Margin="5,10,0,0"  Text="{Binding Number}" VerticalAlignment="Top" 
+                                       Foreground="#FF505050"  TextTrimming="WordEllipsis"/>
+							<TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="20,10,0,0"  Text="{Binding SongName}" 
+                                       VerticalAlignment="Top" Foreground="#FF505050"  TextTrimming="WordEllipsis"/>
+							<controls:ImageButton Content="ImageButton" HorizontalAlignment="Left" Margin="156,9,0,0" 
+                                                       VerticalAlignment="Top" Width="26" Height="22" NorImage="skin/01926[26x22x8BPP].png" 
+                                                       HorImage="skin/01927[26x22x8BPP].png" DownImage="skin/01928[26x22x8BPP].png" 
+                                                       Style="{DynamicResource ImageButtonStyle}"/>
+							<controls:ImageButton Content="ImageButton" HorizontalAlignment="Left" Margin="188,9,0,0" 
+                                                       VerticalAlignment="Top" Width="23" Height="23" NorImage="skin/01777[23x23x8BPP].png" 
+                                                       HorImage="skin/01778[23x23x8BPP].png" DownImage="skin/01779[23x23x8BPP].png" 
+                                                       Style="{DynamicResource ImageButtonStyle}" RenderTransformOrigin="2.5,0.409"/>
+							<TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="227,10,0,0" TextWrapping="Wrap" 
+                                       Text="{Binding TotalTime}" VerticalAlignment="Top" Foreground="#FF505050"/>
+							<Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="10,9,0,-9" VerticalAlignment="Top" 
+                                   Width="100"/>
+							<controls:ImageButton x:Name="imageButton" Content="ImageButton" HorizontalAlignment="Left"
+                                                       Margin="225,19.836,0,0" VerticalAlignment="Top" 
+                                                       Style="{DynamicResource ImageButtonStyle}"/>
+							
+						</Grid>
+					</Border>
+					<ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="grid" Value="#A0EEE3E3"/>
+                        </Trigger>
+                        <!--<Trigger Property="IsMouseDirectlyOver" Value="true">
+							<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+							<Setter Property="Background" TargetName="grid" Value="#FF8BA1B8"/>
+							<Setter Property="Height" TargetName="Bd" Value="50"/>
+							<Setter Property="Margin" TargetName="textBlock1" Value="65,24,0,0"/>
+                            <Setter Property="Width" TargetName="textBlock" Value="100"/>
+							<Setter Property="Margin" TargetName="textBlock" Value="65,4,0,0"/>
+							<Setter Property="Width" TargetName="image" Value="50"/>
+							<Setter Property="Source" TargetName="image" Value="20140218175057634765.png"/>
+							<Setter Property="RenderTransformOrigin" TargetName="image" Value="0.18,0.04"/>
+							<Setter Property="Margin" TargetName="image" Value="0"/>
+							<Setter Property="Foreground" TargetName="textBlock" Value="White"/>
+							<Setter Property="Foreground" TargetName="textBlock1" Value="White"/>
+							<Setter Property="Margin" TargetName="imageButton" Value="210,10.163,0,0"/>
+							<Setter Property="Width" TargetName="imageButton" Value="26"/>
+							<Setter Property="Height" TargetName="imageButton" Value="22"/>
+							<Setter Property="NorImage" TargetName="imageButton" Value="skin/01066[26x22x8BPP].png"/>
+							<Setter Property="HorImage" TargetName="imageButton" Value="skin/01067[26x22x8BPP].png"/>
+							<Setter Property="DownImage" TargetName="imageButton" Value="skin/01068[26x22x8BPP].png"/>
+						</Trigger>-->
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="IsSelected" Value="true"/>
+								<!--<Condition Property="Selector.IsSelectionActive" Value="false"/>-->
+							</MultiTrigger.Conditions>
+							<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
+						</MultiTrigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style> 
+</ResourceDictionary>

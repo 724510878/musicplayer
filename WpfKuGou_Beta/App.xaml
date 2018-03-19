@@ -1,0 +1,102 @@
+﻿<Application
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:WpfKuGou_Beta" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+	xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:controls="clr-namespace:WpfKuGou_Beta.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="WpfKuGou_Beta.App"
+	StartupUri="MainWindow.xaml">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="ResourceDictionary.xaml"/>
+                <ResourceDictionary Source="Simple Styles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<SampleData:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
+<!-- 应该在此定义应用程序级的资源。-->
+		 
+			<Style x:Key="ImageButtonStyle" TargetType="{x:Type controls:ImageButton}">
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type controls:ImageButton}">
+							<Grid>
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualStateGroup.Transitions>
+											<VisualTransition GeneratedDuration="0:0:0.2"/>
+										</VisualStateGroup.Transitions>
+										<VisualState x:Name="Normal">
+											<Storyboard>
+												<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Hor">
+													<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+												</DoubleAnimationUsingKeyFrames>
+												<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Down">
+													<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+												</DoubleAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="MouseOver">
+											<Storyboard>
+												<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Nor">
+													<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+												</DoubleAnimationUsingKeyFrames>
+												<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Down">
+													<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+												</DoubleAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="Pressed">
+											<Storyboard>
+												<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Nor">
+													<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+												</DoubleAnimationUsingKeyFrames>
+												<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Hor">
+													<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+												</DoubleAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="Disabled"/>
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<Image x:Name="Nor" Source="{TemplateBinding NorImage}" />
+								<Image x:Name="Hor" Source="{TemplateBinding HorImage}" />
+								<Image x:Name="Down" Source="{TemplateBinding DownImage}" />
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+            <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+                <Style.Triggers>
+                    <Trigger Property="IsFocused" Value="True">
+                        <Setter  Property="Background" Value="#5FCBCBCB" />
+                    </Trigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsFocused" Value="False"/>
+                            <Condition Property="Text" Value=""/>
+                        </MultiTrigger.Conditions>
+                        <MultiTrigger.Setters>
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <VisualBrush Opacity="0.4" Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <TextBlock FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Text="输入歌曲名 即可搜索歌词" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </MultiTrigger.Setters>
+                    </MultiTrigger>
+                </Style.Triggers>
+            </Style>
+
+        </ResourceDictionary>
+		
+
+		
+	</Application.Resources>
+</Application>
